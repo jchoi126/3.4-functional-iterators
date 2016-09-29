@@ -1038,7 +1038,7 @@ var items = [{
 
 
 // Question 1
-
+//
 items.forEach(function(item, index){
 
 });
@@ -1049,11 +1049,58 @@ var itemss = items.reduce(function(par1,product){
 
 var answerOne = (itemss/items.length).toFixed(2)
 console.log(answerOne);
+//
+// // Question 2
+//
+var titlesArray = items.filter(function(num) {
+  return num.price >= 14 && num.price <= 18;
+});
 
-// Question 2
+titlesArray.forEach(function(num) {
+  console.log(num.title);
+});
+//
+// // // Question 3
+// //
+var gbpLabel = items.filter(function(num) {
+  return num.currency_code == 'GBP'
+});
 
-if (items.price < 18 && items.price > 14 ){
-    console.log(items.title);
-}
+gbpLabel.forEach(function(num) {
+  console.log(num.title);
+  console.log(num.price);
+});
 
-console.log(items.price);
+// Question 4
+
+var mWood = items.filter(function(num) {
+  if (num.materials.indexOf('wood') != -1) {
+    return num.title
+  }
+});
+
+mWood.forEach(function(num) {
+  console.log(num.title);
+})
+
+// Question 5
+
+var materialsEight = items.filter(function(num) {
+  return num.materials.length >= 8;
+});
+
+materialsEight.forEach(function(num) {
+  console.log(num.title);
+  console.log(num.materials);
+})
+
+// Question 6
+
+var seller = items.filter(function(num) {
+  return num.who_made == 'i_did'
+});
+
+seller.forEach(function(num) {
+  console.log(seller.length, " were made by their sellers");
+
+});
