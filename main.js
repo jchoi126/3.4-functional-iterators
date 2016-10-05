@@ -1052,55 +1052,62 @@ console.log(answerOne);
 //
 // // Question 2
 //
-var titlesArray = items.filter(function(num) {
-  return num.price >= 14 && num.price <= 18;
+var titlesArray = items.filter(function(product) {
+  return product.price >= 14 && num.price <= 18;
 });
 
-titlesArray.forEach(function(num) {
-  console.log(num.title);
+titlesArray.forEach(function(product) {
+  console.log(product.title);
 });
-//
+
 // // // Question 3
 // //
-var gbpLabel = items.filter(function(num) {
-  return num.currency_code == 'GBP'
+var gbpLabel = items.filter(function(product) {
+  return product.currency_code == 'GBP'
 });
 
-gbpLabel.forEach(function(num) {
-  console.log(num.title);
-  console.log(num.price);
+gbpLabel.forEach(function(product) {
+  console.log(product.title);
+  console.log(product.price);
 });
 
 // Question 4
 
-var mWood = items.filter(function(num) {
-  if (num.materials.indexOf('wood') != -1) {
-    return num.title
+var mWood = items.filter(function(product) {
+  // if (product.materials.indexOf('wood') != -1) {
+    // num.materials.indexOf('wood')
+  //   return num.title
+  // // }
+  if(product.materials.indexOf('wood') != -1){
+    return true;
+  }else{
+    return false;
   }
 });
 
-mWood.forEach(function(num) {
-  console.log(num.title);
+console.log(mWood);
+
+mWood.forEach(function(product) {
+  console.log('wood stuff',product.title);
 })
 
 // Question 5
 
-var materialsEight = items.filter(function(num) {
-  return num.materials.length >= 8;
+var materialsEight = items.filter(function(product) {
+  return product.materials.length >= 8;
 });
 
-materialsEight.forEach(function(num) {
-  console.log(num.title);
-  console.log(num.materials);
+materialsEight.forEach(function(product) {
+  console.log(product.title);
+  console.log(product.materials);
 })
 
 // Question 6
 
-var seller = items.filter(function(num) {
-  return num.who_made == 'i_did'
+var seller = items.filter(function(product) {
+  return product.who_made == 'i_did'
 });
 
-seller.forEach(function(num) {
+seller.forEach(function(product) {
   console.log(seller.length, " were made by their sellers");
-
 });
